@@ -72,21 +72,25 @@ function sequence(start = 0, step = 1) {
 
 // Глубокое сравнение объектов
 function deepEqual(firstObject, secondObject) {
-    if (firstObject === secondObject) return true; // Если равны, возвращаем true
-    if (firstObject == null || secondObject == null || typeof firstObject !== "object" || typeof secondObject !== "object") {
-        return false; // Если один из них не объект, возвращаем false
+    if (Number.isNaN(firstObject) && Number.isNaN(secondObject)) return true;
+
+    if (firstObject === secondObject) return true;
+
+    if (typeof firstObject !== 'object' || firstObject === null ||
+        typeof secondObject !== 'object' || secondObject === null) {
+        return false;
     }
 
-    let keysA = Object.keys(firstObject);
-    let keysB = Object.keys(secondObject);
+    const firstKeys = Object.keys(firstObject);
+    const secondKeys = Object.keys(secondObject);
+    if (firstKeys.length !== secondKeys.length) return false;
 
-    if (keysA.length !== keysB.length) return false; // Сравниваем количество ключей
-
-    for (let key of keysA) {
-        if (!keysB.includes(key) || !deepEqual(firstObject[key], secondObject[key])) {
-            return false; // Проверяем рекурсивно свойства
+    for (let key of firstKeys) {
+        if (!secondObject.hasOwnProperty(key) || !deepEqual(firstObject[key], secondObject[key])) {
+            return false;
         }
     }
+
     return true;
 }
 
