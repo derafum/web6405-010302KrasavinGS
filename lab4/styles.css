@@ -153,3 +153,12 @@ body:hover {
     transition: background-color 0.5s;
 }
 
+/* Анимация для заголовка */
+.animated-header {
+    transition: color 0.5s, transform 0.3s;
+}
+
+.animated-header:hover {
+    color: #ff5722;
+    transform: rotate(5deg);
+}
