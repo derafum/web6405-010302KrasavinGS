@@ -1,6 +1,7 @@
 @echo off
+
 echo Запуск JSON Server...
-start "JSON Server" cmd /k "json-server --watch data.json --port 3000"
+start npx mock-json-server data.json --port=3000
 
 echo Запуск HTTP Server...
 start "HTTP Server" cmd /k "http-server -c-1 -p 8000"

@@ -20,29 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Отправка данных через Fetch API
-        const formData = { name, email, message };
-
-        fetch('http://localhost:3000/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Сетевая ошибка');
-            }
-            return response.json();
-        })
-        .then(data => {
-            alert('Ваше сообщение успешно отправлено!');
-            form.reset(); // Очищаем форму
-        })
-        .catch(error => {
-            alert('Произошла ошибка при отправке сообщения: ' + error.message);
-        });
+        // Валидация прошла успешно
+        alert('Форма успешно заполнена!');
+        form.reset(); // Очищаем форму
     });
 
     // Функция для проверки корректности email

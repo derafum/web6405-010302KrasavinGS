@@ -61,43 +61,37 @@ td:last-child {
 }
 /* Стили для Flexbox таблицы на about.html */
 .flex-table {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.flex-table.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Дополнительные стили для таблицы */
+.flex-table {
     display: flex;
     flex-direction: column;
-    border: 1px solid #333;
-    border-radius: 5px;
-    overflow: hidden;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
+    /* Ваши существующие стили */
 }
 
 .flex-row {
     display: flex;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-}
-
-.flex-row:last-child {
-    border-bottom: none;
 }
 
 .flex-cell {
     flex: 1;
-    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Другие стили */
 }
 
-.flex-row.header {
-    background-color: #333;
-    color: #fff;
+.header {
+    background-color: #f0f0f0;
     font-weight: bold;
-}
-
-.flex-row:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.flex-row:hover {
-    background-color: #ddd;
 }
 
 /* Стили для формы с использованием CSS Grid */

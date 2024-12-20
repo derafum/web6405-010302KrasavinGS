@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 populateTable(data);
+
+                // Проверяем, первый ли запуск
+                const isFirstVisit = !localStorage.getItem('hasVisited');
+                if (isFirstVisit) {
+                    tableContainer.classList.add('slide-in');
+                    localStorage.setItem('hasVisited', 'true');
+                } else {
+                    // Если не первый запуск, сразу показываем таблицу без анимации
+                    tableContainer.style.opacity = 1;
+                    tableContainer.style.transform = 'translateY(0)';
+                }
             })
             .catch(error => {
                 alert('Не удалось загрузить данные: ' + error.message);

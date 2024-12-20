@@ -1,22 +1,16 @@
 {
-  "posts": [
-    {
-      "id": "1a7d",
-      "name": "123",
-      "email": "test@yandex.ru",
-      "message": "22"
-    }
-  ],
-  "skills": [
-    {
-      "id": "1",
-      "name": "HTML",
-      "experience": "4 года"
-    },
-    {
-      "id": "2",
-      "name": "CSS",
-      "experience": "5 года"
-    }
-  ]
+  "/skills": {
+    "get": [
+      {
+        "id": "1",
+        "name": "HTML",
+        "experience": "4 года"
+      },
+      {
+        "id": "2",
+        "name": "CSS",
+        "experience": "5 года"
+      }
+    ]
+  }
 }
