@@ -59,3 +59,43 @@ td {
 td:last-child {
     text-align: right;
 }
+/* Стили для Flexbox таблицы на about.html */
+.flex-table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.flex-row {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.flex-row:last-child {
+    border-bottom: none;
+}
+
+.flex-cell {
+    flex: 1;
+    text-align: center;
+}
+
+.flex-row.header {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+.flex-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.flex-row:hover {
+    background-color: #ddd;
+}
